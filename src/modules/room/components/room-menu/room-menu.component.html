@@ -8,7 +8,9 @@
     TODO itérer sur les rooms. Au clic, naviguer sur la room sélectionnée.
     Remplacer [id de la room] par l'id de la room itérée
   -->
-  <div class="menu-item" [ngClass]="{'selected': (roomId$ | async) === '[id de la room]'}"></div>
+
+  <div *ngFor="let room of rooms" class="menu-item" [ngClass]="{'selected': (roomId$ | async) === room.id}" (click)="goToRoom(room)">{{room.name}}</div>
+  <!-- <div class="menu-item" [ngClass]="{'selected': (roomId$ | async) === '[id de la room]'}"></div> -->
 
 </div>
 <app-room-create-modal #modal></app-room-create-modal>

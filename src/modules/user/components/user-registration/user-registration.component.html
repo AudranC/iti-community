@@ -17,13 +17,14 @@
 
     <nz-form-item>
       <nz-form-label nzFor="confirm-password">Confirmation du mot de passe</nz-form-label>
-      <nz-form-control>
+      <!-- <nz-form-control> -->
+      <nz-form-control nzErrorTip="Message de validation">
         <input class="ant-input" type="password" name="confirm-password" id="confirm-password"
           [(ngModel)]="model.confirmPassword" #confirm="ngModel">
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-control>
+      <nz-form-control nzErrorTip="Message de validation">
         <button class="register-button" nz-button nzType="default" [disabled]="f.form.invalid">S'enregistrer</button>
       </nz-form-control>
     </nz-form-item>

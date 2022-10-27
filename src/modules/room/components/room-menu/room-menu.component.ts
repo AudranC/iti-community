@@ -17,7 +17,7 @@ export class RoomMenuComponent implements OnInit {
 
   rooms: Room[];
 
-  constructor(private feedStore: FeedStore, private queries: RoomQueries, private roomSocketService: RoomSocketService) {
+  constructor(private feedStore: FeedStore, private queries: RoomQueries, private roomSocketService: RoomSocketService, private router: Router,) {
     this.roomId$ = feedStore.roomId$;
     this.rooms = [];
   }
@@ -28,5 +28,7 @@ export class RoomMenuComponent implements OnInit {
 
   goToRoom(room: Room) {
     // TODO naviguer vers app/[id de la room]
+    // console.log(this.rooms)
+    this.router.navigate(['app/' + room.id])
   }
 }
