@@ -74,9 +74,16 @@ export class UserProfileModalComponent implements OnInit {
 
   async onOk() {
     // TODO vérifier si le formulaire est valide
+    // console.log()
+    console.log(this.user)
+    if (this.form.valid) {
+      if (this.model.hasChanged()) {
+        // TODO mettre à jour l'utilisateur via le service
+        await this.userService.update(this.model)
 
-    if (this.model.hasChanged()) {
-      // TODO mettre à jour l'utilisateur via le service
+        this.user.username = this.model.username
+        this.user.photoUrl = this.model.photoUrl
+      }
     }
 
     this.close();

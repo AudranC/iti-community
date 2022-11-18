@@ -35,7 +35,7 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   async submit() {
-    console.log(this.model)
+    // console.log(this.model)
     // TODO  Vérifier que la confirmation de mot de passe correspond au mot de passe
     if (this.model.password === "" || this.model.confirmPassword === "") {
       this.nzMessageService.error("Mot de passe incorrect")

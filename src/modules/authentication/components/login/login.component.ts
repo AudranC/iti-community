@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
 
   goToRegistration() {
     // TODO naviguer vers "/splash/register"
-    console.log(this.router.config)
     this.router.navigate(["/splash/register"])
   }
 
@@ -40,7 +39,6 @@ export class LoginComponent implements OnInit {
   }
 
   async login() {
-    // console.log(this.model)
     if (this.ngForm.form.invalid) {
       this.nzMessageService.error("Formulaire incomplet");
       return;
